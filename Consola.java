@@ -101,7 +101,6 @@ public class Consola {
         println("Te quedaste sin disparos. Barcos restantes: " + barcosRestantes);
     }
 
-    // Helpers de impresión
     private void print(String s) { 
         System.out.print(s); 
     }
