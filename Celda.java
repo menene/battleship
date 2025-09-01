@@ -10,7 +10,7 @@ public class Celda {
     }
 
     public boolean tieneBarco() { 
-        return tieneBarco; 
+        return this.tieneBarco; 
     }
 
     public void ponerBarco() { 
@@ -23,5 +23,13 @@ public class Celda {
 
     public void disparar() { 
         this.disparada = true; 
+    }
+
+    public String toString() {
+        if (!this.disparada) {
+            return ".";
+        } else {
+            return this.tieneBarco ? "X" : "O";
+        }
     }
 }

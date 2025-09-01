@@ -30,17 +30,7 @@ public class Consola {
             print((char) ('A' + r) + "  ");
             
             for (int c = 0; c < n; c++) {
-                Celda celda = t.getCelda(r, c);
-                
-                char ch;
-                if (!celda.estaDisparada()) {
-                    ch = '.';
-                }
-                else {
-                    ch = celda.tieneBarco() ? 'X' : 'O';
-                }
-
-                print(ch + " ");
+                print(t.getCelda(r, c) + " ");
             }
 
             println("");
