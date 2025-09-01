@@ -6,13 +6,13 @@ public class Consola {
     private final Scanner sc;
 
     public Consola() {
-        this.sc = new Scanner(System.in)
+        this.sc = new Scanner(System.in);
     }
 
     public void mostrarBienvenida(int n, int barcos, int disparosMax) {
         println("=== 💣 Battleship ⚓️ ===");
         println("Tablero " + n + "x" + n + ".");
-        pintln("Filas A–" + (char)('A' + (n - 1)) + " y columnas 1–" + n + ".")
+        println("Filas A–" + (char)('A' + (n - 1)) + " y columnas 1–" + n + ".");
         println("Hay " + barcos + " barcos ocultos (tamaño 1).");
         println("Comandos:\nCoordenadas (B3)\n'REVELAR' para depurar\n'SALIR' para terminar.\n");
     }

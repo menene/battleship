@@ -10,6 +10,7 @@ public class Tablero {
     public Tablero(int n) {
         this.n = n;
         this.celdas = new Celda[n][n];
+        this.initTablero(n);
         this.barcosTotales = 0;
     }
 
