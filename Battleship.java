@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Battleship {
     private final int N = 5;
-    private final int BARCOS = 3;        // barcos de 1 celda
+    private final int BARCOS = 3;
     private final int DISPAROS_MAX = 12;
 
     private final Tablero tablero;
@@ -30,6 +30,7 @@ public class Battleship {
                 vista.mostrarMensaje("Saliendo del juego. Adiós.");
                 return;
             }
+
             if (entrada.equals("REVELAR")) {
                 vista.mostrarMensaje("[DEBUG] Tablero oculto:");
                 vista.dibujarTableroOculto(tablero);
@@ -59,7 +60,6 @@ public class Battleship {
                     vista.mostrarMensaje("Agua.\n");
                 }
             } catch (IllegalStateException e) {
-                // En teoría nunca entra aquí por la validación previa
                 vista.mostrarMensaje("Movimiento inválido: " + e.getMessage() + "\n");
             }
         }
@@ -83,11 +83,13 @@ public class Battleship {
         for (int i = 0; i < colStr.length(); i++) {
             if (!Character.isDigit(colStr.charAt(i))) return null;
         }
+
         int col = Integer.parseInt(colStr);
         if (col < 1 || col > N) return null;
 
         int r = filaChar - 'A';
         int c = col - 1;
+
         return new int[] { r, c };
     }
 }

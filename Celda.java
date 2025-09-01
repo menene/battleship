@@ -9,9 +9,19 @@ public class Celda {
         this.disparada = false;
     }
 
-    public boolean tieneBarco() { return tieneBarco; }
-    public void ponerBarco() { this.tieneBarco = true; }
+    public boolean tieneBarco() { 
+        return tieneBarco; 
+    }
 
-    public boolean estaDisparada() { return disparada; }
-    public void disparar() { this.disparada = true; }
+    public void ponerBarco() { 
+        this.tieneBarco = true; 
+    }
+
+    public boolean estaDisparada() { 
+        return disparada; 
+    }
+
+    public void disparar() { 
+        this.disparada = true; 
+    }
 }
