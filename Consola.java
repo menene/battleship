@@ -86,7 +86,7 @@ public class Consola {
 
     public String pedirEntrada(String prompt) {
         print(prompt);
-        return sc.nextLine();
+        return this.sc.nextLine();
     }
 
     public void mostrarMensaje(String mensaje) {

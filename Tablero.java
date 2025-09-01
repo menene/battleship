@@ -17,21 +17,21 @@ public class Tablero {
     private void initTablero(int n) {
         for (int r = 0; r < n; r++) {
             for (int c = 0; c < n; c++) {
-                celdas[r][c] = new Celda();
+                this.celdas[r][c] = new Celda();
             }
         }
     }
 
     public int getN() { 
-        return n; 
+        return this.n; 
     }
 
     public Celda getCelda(int r, int c) { 
-        return celdas[r][c]; 
+        return this.celdas[r][c]; 
     }
 
     public int getBarcosTotales() { 
-        return barcosTotales; 
+        return this.barcosTotales; 
     }
 
     public void colocarBarcosAleatorios(int cantidad, Random rnd) {
@@ -41,8 +41,8 @@ public class Tablero {
             int r = rnd.nextInt(n);
             int c = rnd.nextInt(n);
 
-            if (!celdas[r][c].tieneBarco()) {
-                celdas[r][c].ponerBarco();
+            if (!this.celdas[r][c].tieneBarco()) {
+                this.celdas[r][c].ponerBarco();
                 colocados++;
             }
         }
@@ -51,7 +51,7 @@ public class Tablero {
     }
 
     public boolean disparar(int r, int c) {
-        Celda celda = celdas[r][c];
+        Celda celda = this.celdas[r][c];
 
         if (celda.estaDisparada()) {
             throw new IllegalStateException("Ya se disparó a esa celda.");
@@ -63,7 +63,7 @@ public class Tablero {
     }
 
     public boolean yaDisparada(int r, int c) {
-        return celdas[r][c].estaDisparada();
+        return this.celdas[r][c].estaDisparada();
     }
 
     public int barcosHundidos() {
@@ -71,18 +71,18 @@ public class Tablero {
 
         for (int r = 0; r < n; r++) {
             for (int c = 0; c < n; c++) {
-                Celda celda = celdas[r][c];
+                Celda celda = this.celdas[r][c];
 
                 if (celda.tieneBarco() && celda.estaDisparada()) {
                     hits++;
                 }
             }
         }
-        
+
         return hits;
     }
 
     public boolean todosHundidos() {
-        return barcosHundidos() == barcosTotales;
+        return barcosHundidos() == this.barcosTotales;
     }
 }

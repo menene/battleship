@@ -18,7 +18,7 @@ public class Celda {
     }
 
     public boolean estaDisparada() { 
-        return disparada; 
+        return this.disparada; 
     }
 
     public void disparar() { 
